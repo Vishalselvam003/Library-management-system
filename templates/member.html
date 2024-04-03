@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <meta http-equiv="refresh" content="1"> -->
+    <title>Admin Page</title>
+    <link rel="stylesheet" href="static/admin.css">
+</head>
+<body>
+    <header class="member-h">
+        <nav>
+          <div class="logo">
+            <h3 class="logo"><h3 class="logo">THE NOVEL OASIS</h3></h3>
+          </div>
+          <ul class="member-table">
+            <li><a href="{{url_for('book')}}">Show Books</a></li>
+            <li><a href="{{url_for('editbook')}}">Edit Books</a></li>
+            <li><a href="{{url_for('userdetails')}}">User Details</a></li>
+            <li><a>Member Details</a></li>
+            <li class="logout"><a href="{{url_for('home')}}">LOGOUT &drbkarow;</a></li>
+          </ul>
+        </nav>
+      </header>
+      <div class="table-member">
+        <table class="member">
+            <tr>
+                <th>SO NO</th>
+                <th>USER NAME</th>
+                <th>BOOK NAME</th>
+                <th>EMAIL ID</th>
+                <th>MOBILE</th>
+                <th class="td">DATE</th>
+                <th>TIME</th>
+                <!-- <th>SENT EMAIL</th> -->
+            </tr>
+            {%for i in member %}
+              <tr>
+                <td>{{loop.index}}</td>
+                <td>{{i.user_name}}</td>
+                <td>{{i.book}}</td>
+                <td>{{i.email}}</td>
+                <td>{{i.mobile}}</td>
+                <td class="td">{{i.booking_date}}</td>
+                <td>{{i.booking_time}}</td>
+                <!-- <td><a href="/udelete/{{i.email_id}}" type="submit" class="delete-btn" onclick="confirm('Are you want to delete user?')" >EM</a></td> -->
+              </tr>
+              
+            {%endfor%}
+          </table>
+      </div>
+</body>
+</html>

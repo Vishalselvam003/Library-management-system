@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Page</title>
+    <link rel="stylesheet" href="static/admin.css">
+</head>
+<body>
+    <header style="background-color: #00b29d;">
+        <nav>
+          <div class="logo">
+            <h3 class="logo"><h3 class="logo">THE NOVEL OASIS</h3></h3>
+          </div>
+          <ul>
+            <li><a href="{{url_for('book')}}">Show Books</a></li>
+            <li><a href="{{url_for('editbook')}}">Edit Books</a></li>
+            <li><a href="{{url_for('userdetails')}}">User Details</a></li>
+            <li><a href="{{url_for('member')}}">Member Details</a></li>
+            <li class="logout"><a href="{{url_for('home')}}">LOGOUT &drbkarow;</a></li>
+          </ul>
+        </nav>
+      </header>
+      <div class="table-main">
+        <table>
+            <tr>
+                <th>BOOK ID</th>
+                <th>BOOK NAME</th>
+                <th>AUTHOR</th>
+                <th>BOOK EDITION</th>
+                <th>PUBLICATION</th>
+                <th>BOOK STATUS</th>
+                <th>DELETE BOOK</th>
+            </tr>
+            {%for i in booklist %}
+              <tr>
+                <td>{{loop.index}}</td>
+                <td>{{i.book_name}}</td>
+                <td>{{i.author}}</td>
+                <td>{{i.book_edition}}</td>
+                <td>{{i.publication}}</td>
+                <td>{{i.book_status}}</td>
+                <td style="width: 100px;"><a href="/bdelete/{{i.book_name}}" type="submit" class="delete-btn" style="background-color: #ae2012" >DELETE</a></td>
+              </tr>
+              
+            {%endfor%}
+          </table>
+      </div>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Library menagement</title>
+  <link rel="stylesheet" href="static/home.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">
+        <h3 class="logo">THE NOVEL OASIS</h3>
+      </div>
+      <ul>
+        <li><a href="{{url_for('adminlogin')}}">Admin</a></li>
+        <li><a href="{{url_for('userreg')}}"> User Registration</a></li>
+        <li><a href="{{url_for('userlogin')}}">User Login</a></li>
+      </ul>
+    </nav>
+  </header>
+  <div class="login-box" id="admin-box">
+    <h2 class="header">
+      Admin Login
+    </h2>
+  <form action="" method="post">
+    <div class="user-box">
+      <input type="text" name="adminname" required id="aname"  value="{{aname}}"  pattern="[A-Za-z]+" title="Username should only contain  characters">
+      <label>Admin name</label>
+    </div>
+    <div class="user-box">
+      <input type="email" name="adminemail" required id="aname"  value="{{emailid}}">
+      <label>Admin email</label>
+    </div>
+    <div class="user-box">
+      <input type="password" name="adminpassword" required id="apass" value="{{apass}}" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"  title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 characters">
+      <label>Admin Password</label>
+      {%if admin=='no'%}
+        <h4 ><span>&#9888;</span>&nbsp;&nbsp;&nbsp;Incorrect Details!</h4>
+      {%endif%}  
+    </div><center>
+      <button type="submit" name="admin">
+           Login
+    </button></center>
+  </form>
+</div>
+</body>
+</html>

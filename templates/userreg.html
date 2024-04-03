@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Library menagement</title>
+  <link rel="stylesheet" href="static/home.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">
+        <h3 class="logo">THE NOVEL OASIS</h3>
+      </div>
+      <ul>
+        <li><a href="{{url_for('adminlogin')}}">Admin</a></li>
+        <li><a href="{{url_for('userreg')}}"> User Registration</a></li>
+        <li><a href="{{url_for('userlogin')}}">User Login</a></li>
+      </ul>
+    </nav>
+  </header>
+<div class="login-box" id="userr-box">
+  <h2 class="header">
+     User Registration
+  </h2>
+<form action="" method="post">
+  <div class="user-box">
+    <input type="text" name="uname" required pattern="[A-Za-z]+" title="Username should only contain  characters">
+    <label>User Name</label>
+  </div>
+  <div class="user-box">
+    <input type="email" name="uemail" pattern="^[^\d\s][^\s@]+@[^\s.]+\.[^\s.]+$" title="Please enter a valid Gmail address" required>
+    <label>Email Id</label>
+  </div>
+  <div class="user-box">
+    <input type="tel" pattern="[6-9]{1}[0-9]{9}" name="umobile" required>
+    <label>Mobile No</label>
+  </div>
+  <div class="user-box">
+    <input type="password" name="upass" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"  title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 characters" required>
+  x  <label>Password</label>
+    {%if user=='yes'%}
+    <h4 style="color: rgb(4, 136, 35);">*user Registration succesfully</h4>
+    {%elif user=="no"%}
+    <h4>*somthing wrong try again</h4>
+    {%endif%}
+
+  </div><center>
+    <button type="submit" name="userreg">
+         submit
+  </button></center>
+</form>
+</div>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Library menagement</title>
+  <link rel="stylesheet" href="static/home.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">
+        <h3 class="logo">THE NOVEL OASIS</h3>
+      </div>
+      <ul>
+        <li><a href="{{url_for('adminlogin')}}">Admin</a></li>
+        <li><a href="{{url_for('userreg')}}"> User Registration</a></li>
+        <li><a href="{{url_for('userlogin')}}">User Login</a></li>
+      </ul>
+    </nav>
+  </header>
+<div class="login-box" id="userl-box">
+  <h2 class="header">
+    User Login
+  </h2>
+<form action="" method="post">
+  <div class="user-box">
+    <input type="email" name="lemail" value="{{email}}" required>
+    <label>Email Id</label>
+  </div>
+  <div class="user-box">
+    <input type="password" name="lpass" required value="{{password}}">
+    <label>Password</label>
+    {%if user=='no'%}
+    <h4>*user login unsuccesfully</h4>
+    {%endif%}
+  </div><center>
+    <button type="submit" name="userlogin">
+         Login
+  </button></center>
+</form>
+</div>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Page</title>
+    <link rel="stylesheet" href="static/admin.css">
+</head>
+<body>
+    <header class="editpage">
+        <nav>
+          <div class="logo">
+            <h3 class="logo"><h3 class="logo">THE NOVEL OASIS</h3></h3>
+          </div>
+          <ul>
+            <li><a href="{{url_for('book')}}">Show Books</a></li>
+            <li><a>Edit Books</a></li>
+            <li><a href="{{url_for('userdetails')}}">User Details</a></li>
+            <li><a href="{{url_for('member')}}">Member Details</a></li>
+            <li class="logout"><a href="{{url_for('home')}}">LOGOUT &drbkarow;</a></li>
+          </ul>
+        </nav>
+      </header>
+      <div class="login-box" id="admin-box">
+      <form action="" method="post">
+        <div class="user-box">
+          <input type="text" name="bookname" required >
+          <label>BOOK NAME</label>
+        <div class="user-box">
+          <input type="text" name="author" required >
+          <label>AUTHOR</label>
+        <div class="user-box">
+            <input type="text" name="edition" required>
+            <label>BOOK EDITION</label>  
+        </div>
+        <div class="user-box">
+          <input type="text" name="publication" required >
+          <label>PUBLICATION</label>
+          {%if book=='yes'%}
+          <h4 style="color: #1a7102;;">*Book succesfully added</h4>
+          {%elif book=="no"%}
+          <h4 style="color: red;">*something wrong or {{bname}}  book is alredy in Library!</h4>
+          {%endif%}
+        </div><center>
+          <button id="update" type="submit" name="update">update</button> &nbsp;&nbsp;&nbsp;&nbsp;
+          <button id=delete type="reset" >clear</button>
+        </center>
+      </form>
+    </div>
+</body>
+</html>

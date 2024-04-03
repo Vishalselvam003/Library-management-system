@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Library menagement</title>
+  <link rel="stylesheet" href="static/home.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">
+        <h3 class="logo">THE NOVEL OASIS</h3>
+      </div>
+      <ul>
+        <li><a href="{{url_for('adminlogin')}}">Admin</a></li>
+        <li><a href="{{url_for('userreg')}}"> User Registration</a></li>
+        <li><a href="{{url_for('userlogin')}}">User Login</a></li>
+      </ul>
+    </nav>
+  </header>
+  <h1 class="home" id="home" >Welcome to Library </h1>
+  <h6  class="quote" id="home1" >"A book is gift you can open again and again!"</h6>
+</body>
+</html>

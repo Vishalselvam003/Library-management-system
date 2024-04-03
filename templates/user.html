@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Page</title>
+    <link rel="stylesheet" href="static/user.css">
+</head>
+<body>
+    <header class="uhome">
+        <nav>
+          <div class="logo">
+            <h3 class="logo">THE NOVEL OASIS</h3>
+          </div>
+          <ul>
+            <li><a href="{{url_for('bookuser')}}">show books</a></li>
+            <li><a href="{{url_for('returnbook')}}">Return Books</a></li>
+            <li class="logout"><a href="{{url_for('home')}}">LOGOUT &drbkarow;</a></li>
+          </ul>
+        </nav>
+      </header>
+      <h1 class="home-user">Welcome To library <span>{{name.title()}}!</span></h1>
+      <h4  class="title">"Why buy a book when you can join a library."</h4>
+      <center>
+      <button type="submit" class="user-btn"><a href="{{url_for('bookuser')}}">GO NOW</a></button>
+    </center>
+</body>
+</html>

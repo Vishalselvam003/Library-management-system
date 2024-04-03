@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Page</title>
+    <link rel="stylesheet" href="static/user.css">
+    <style>
+  body{
+    margin: 0;
+    padding: 0;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    background-color: #ffffff;
+  }
+  .user-home{
+    background-color:#641b1b;
+    width: 100%;
+  }
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .logo{
+    color: #ffffff;
+  }
+
+  ul {
+    list-style: none;
+    display: flex;
+  }
+  
+  li {
+    margin-left: 70px;
+  }
+  
+  a {
+    text-decoration: none;
+    color: white;
+    font-size: 120%;
+  }
+  
+  a:hover {
+    color:#fea900;
+  }
+  
+  .logout a{
+      font-weight: bold;
+      color:#e0a502;
+  }
+  .logout a:hover{
+      color: #ffffff;
+  }
+  .get-form{
+    background-color: #ebaaaa;
+    display: inline-block;
+    padding: 5% 4%;
+    border-bottom: 20px solid #641b1b;
+    border-top: 20px solid #641b1b;
+    border-radius: 10px;
+    margin-top: 10%;
+    margin-left: 28%;
+    
+    height: 200px;
+
+    
+  }
+  .get-box{
+    margin-bottom: 25px;
+  }
+
+  .get-box  input{
+    width: 350px;
+    height: 28px;
+    border-radius:5px;
+    border: none;
+    outline: none;
+    background-color: #f2f2f2;
+    font-weight: bold;
+  }
+  label{
+  font-weight: bold;
+  }
+
+
+  .get-btn button{
+    background-color: #641b1b;
+    width: 130px;
+    padding: 4% 6%;
+    border-radius: 5px;
+    color: #ffffff;
+    transition: .5s;
+    border: none;
+    outline: none;
+}
+.get-btn button:hover {
+  background: #641b1b;
+  color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #641b1b,
+              0 0 25px #641b1b,
+              0 0 50px #641b1b,
+              0 0 100px #641b1b,
+              0 0 200px #641b1b;
+}
+.get-btn{
+    position: absolute;
+left: 44%;
+top: 70%;
+}
+
+    </style>
+</head>
+<body>
+    <header class="user-home">
+        <nav>
+          <div class="logo">
+            <h3 class="logo"><h3 class="logo">THE NOVEL OASIS</h3></h3>
+          </div>
+          <ul>
+            <li><a href="{{url_for('bookuser')}}">show books</a></li>
+            <li><a href="{{url_for('returnbook')}}">Return Books</a></li>
+            <li class="logout"><a href="/">LOGOUT &drbkarow;</a></li>
+          </ul>
+        </nav>
+      </header>
+      <div class="get-form">
+        <form action="{{url_for('bookreturn')}}" method="post">
+            <div class="get-box">
+                <label>BOOK NAME:</label>&nbsp;&nbsp;
+                <input type="text" name="book" required>  
+            </div>
+            <div class="get-box">
+                <label>USER NAME:</label>&nbsp;&nbsp;&nbsp;
+                <input type="text" name="name" required>  
+            </div>
+            <div class="get-box">
+                <label>EMAIL ID</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="email" name="email" required>  
+            </div>
+                {%if message=='yes'%}
+                <h4 style="color: rgb(4, 136, 35);">*Book Return succesfully  &nbsp;&nbsp;&nbsp;&nbsp;<a href="/bookuser" style="background-color: rgb(8, 94, 10); padding: 0.5% 3%; border-radius: 5px; display: inline; " >ok</a></h4>
+                {%elif message=="no"%}
+                <h4 style="color: rgb(179, 7, 7);">*sorry somthing error  &nbsp;&nbsp;&nbsp;&nbsp;<a href="/returnbook" style="background-color: rgb(225, 0, 0); padding: 0.5% 3%; border-radius: 5px; display: inline; " >ok</a></h4>
+      
+                {%endif%}
+            </div>
+
+            <div class="get-btn">
+                <center><button type="submit" name="returnbook">RETURN BOOK</button></center>
+            </div>
+      </div>
+
+</body>
+</html>

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Page</title>
+    <link rel="stylesheet" href="static/user.css">
+    <style>
+  body{
+    margin: 0;
+    padding: 0;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    background-color: #ffffff;
+  }
+  .user-home{
+    background-color:#1b6437;
+    width: 100%;
+  }
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .logo{
+    color: #ffffff;
+  }
+
+  ul {
+    list-style: none;
+    display: flex;
+  }
+  
+  li {
+    margin-left: 70px;
+  }
+  
+  a {
+    text-decoration: none;
+    color: white;
+    font-size: 120%;
+  }
+  
+  a:hover {
+    color:#b8e8f8;
+  }
+  
+  .logout a{
+      font-weight: bold;
+      color:#b2e8f7;
+  }
+  .logout a:hover{
+      color: #ffffff;
+  }
+  .get-form{
+    background-color: #7fdba2;
+    display: inline-block;
+    padding: 1% 4%;
+    /* border-bottom: 20px solid #1b6437;
+    border-top: 20px solid #1b6437; */
+    border-radius: 10px;
+    margin-top: 7%;
+    margin-left: 28%;
+    border: 5px solid #1b6437;
+
+    
+  }
+  .get-box{
+    margin-bottom: 25px;
+  }
+
+  .get-box  input{
+    width: 350px;
+    height: 28px;
+    border-radius:5px;
+    border: none;
+    outline: none;
+    background-color: #b2efc9;
+    font-weight: bold;
+  }
+  label{
+  font-weight: bold;
+  }
+
+
+  .get-btn button{
+
+    background-color: #1b6437;
+    padding: 1% 5%;
+    margin-top: 3%;
+    border-radius: 5px;
+    color: #ffffff;
+
+}
+
+
+    </style>
+</head>
+<body>
+    <header class="user-home">
+        <nav>
+          <div class="logo">
+            <h3 class="logo"><h3 class="logo">THE NOVEL OASIS</h3></h3>
+          </div>
+          <ul>
+            <li><a href="{{url_for('bookuser')}}">show books</a></li>
+            <li><a href="{{url_for('returnbook')}}">Return Books</a></li>
+            <li class="logout"><a href="/">LOGOUT &drbkarow;</a></li>
+          </ul>
+        </nav>
+      </header>
+      <div class="get-form">
+        <form action="{{url_for('usergetbook')}}" method="post">
+            <div class="get-box">
+                <label>BOOK NAME:</label>&nbsp;&nbsp;
+                <input type="text" name="book" required value="{{book}}">  
+            </div>
+            <div class="get-box">
+                <label>USER NAME:</label>&nbsp;&nbsp;&nbsp;
+                <input type="text" name="name" required>  
+            </div>
+            <div class="get-box">
+                <label>EMAIL ID</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="email" name="email" required>  
+            </div>
+            <div class="get-box">
+                <label>MOBILE NO:</label>&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="tel" pattern="[0-9]{10}" name="mobile" required>  
+            </div>
+            <div class="get-box">
+                <label>DATE:</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="date" name="date" required>  
+            </div>
+            <div class="get-box">
+                <label>TIME:</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="time" name="time" required> 
+                {%if message=='yes'%}
+                <h4 style="color: rgb(4, 136, 35);">*Thankyou for using our books &nbsp;&nbsp;&nbsp;&nbsp;<a href="/bookuser" style="background-color: rgb(8, 94, 10); padding: 0.5% 3%; border-radius: 5px; display: inline; " >ok</a></h4>
+                {%elif message=="no"%}
+                <h4 style="color: rgb(179, 7, 7);">*sorry you can take only one book  &nbsp;&nbsp;&nbsp;&nbsp;<a href="/bookuser" style="background-color: rgb(225, 0, 0); padding: 0.5% 3%; border-radius: 5px; display: inline; " >ok</a></h4>
+                {%elif message=="not"%}
+                <h4 style="color: rgb(179, 7, 7);">*sorry book is not available!  &nbsp;&nbsp;&nbsp;&nbsp;<a href="/bookuser" style="background-color: rgb(225, 0, 0); padding: 0.5% 3%; border-radius: 5px; display: inline; " >ok</a></h4>
+                {%elif message=="sorry"%}
+                <h4 style="color: rgb(179, 7, 7);">*incorrect details!  &nbsp;&nbsp;&nbsp;&nbsp;</h4>
+                {%elif message=="wrong"%}
+                <h4 style="color: rgb(179, 7, 7);">*email or username or mobile no wrong! &nbsp;&nbsp;&nbsp;&nbsp;</h4>
+                {%endif%}
+            </div>
+
+            <div class="get-btn">
+                <center><button type="submit" name="getbook">GET BOOK</button></center>
+            </div>
+      </div>
+
+</body>
+</html>

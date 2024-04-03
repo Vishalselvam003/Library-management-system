@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta http-equiv="refresh" content="1"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Page</title>
+    <link rel="stylesheet" href="static/user.css">
+    
+</head>
+<body>
+    <header class="user-home">
+        <nav>
+          <div class="logo">
+            <h3 class="logo"><h3 class="logo">THE NOVEL OASIS</h3></h3>
+          </div>
+          <ul>
+            <li><a href="{{url_for('bookuser')}}">show books</a></li>
+            <li><a href="{{url_for('returnbook')}}">Return Books</a></li>
+            <li class="logout"><a href="/">LOGOUT &drbkarow;</a></li>
+          </ul>
+        </nav>
+      </header>
+      <div class="table-main">
+        <table>
+            <tr>
+                <th>BOOK ID</th>
+                <th>BOOK NAME</th>
+                <th>AUTHOR</th>
+                <th>BOOK EDITION</th>
+                <th>PUBLICATION</th>
+                <th>BOOK STATUS</th>
+                <th>GET BOOK</th>
+            </tr>
+            {%for i in booklist %}
+              <tr>
+                <td>{{loop.index}}</td>
+                <td>{{i.book_name}}</td>
+                <td>{{i.author}}</td>
+                <td>{{i.book_edition}}</td>
+                <td>{{i.publication}}</td>
+                <td>{{i.book_status}}</td>
+                <td class="userbook-btn1"><a href="/getbook/{{i.book_name}}" type="submit" class="userbook-btn"  style="background-color:967aa1;">GET BOOK</a></td>
+                </tr>
+            {%endfor%}
+          </table>
+      </div>
+</body>
+</html>
