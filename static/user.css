@@ -1,0 +1,136 @@
+body{
+  background-color: #ffffff;
+  /* background-image:url("https://images.alphacoders.com/133/1339726.png"); */
+  background-repeat:no-repeat;
+  background-size:cover;
+  }
+  
+  body{
+    margin: 0;
+    padding: 0;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  }
+  .user-home{
+    background-color:#1b6460;
+    width: 100%;
+    position: fixed;
+  }
+  .uhome{
+    background-color:#1b3764;
+    
+  }
+ 
+  
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .logo{
+    color: #ffffff;
+  }
+
+  ul {
+    list-style: none;
+    display: flex;
+  }
+  
+  li {
+    margin-left: 70px;
+  }
+  
+  a {
+    text-decoration: none;
+    color: white;
+    font-size: 120%;
+  }
+  
+  a:hover {
+    color:#b8e8f8;
+  }
+  
+  .logout a{
+      font-weight: bold;
+      color:#b2e8f7;
+  }
+  .logout a:hover{
+      color: #ffffff;
+  }
+
+.home-user{
+  text-align: center;
+  margin-top: 10%;
+  font-size:80px;
+}
+.home-user span{
+  color:#1a4790;
+  font-size: 100px;
+}
+.title{
+  text-align: center;
+  font-size:30px; 
+  color: #ee8844;
+}
+
+.user-btn{
+  background-color: chocolate;
+  padding: 7px 35px;
+  border-radius: 5px;
+  font-size: 15px;
+  font-weight: bold;
+  border: 2px solid rgb(0, 0, 0); 
+}
+
+.user-btn a{
+  color: black;
+}
+
+
+.user-btn :hover {
+  background:chocolate;
+  color: #fff;
+}
+/*bookuser.html*/
+
+.table-main{
+    background-color: #a8c3f0;
+    display: inline-block;
+    margin: 8% 10%;
+    
+  }
+  
+  table,th,td{
+    border: 2px solid black;
+    border-collapse: separate;
+    text-align: center;
+    padding: 10px 10px;
+
+  }
+  
+  th{
+    font-size: large;
+    font-weight: bold;
+    background-color: #02797b;
+    position: sticky;
+    top: 9.6%;
+  }
+  tr:nth-child(even){
+    background-color: #f5e6e8;
+  }
+  tr{
+  text-transform: uppercase;
+  font-weight: bold;
+  }
+  
+.userbook-btn{
+  background-color: #02797b;
+  padding: 5% 20%;
+  border-radius: 4px;
+  font-size: 15px;
+}
+.userbook-btn1{
+  width: 16%;
+}
+

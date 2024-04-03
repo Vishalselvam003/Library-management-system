@@ -1,0 +1,166 @@
+body{
+background-image:url("https://img.freepik.com/free-photo/luxury-reading-material-illuminates-old-fashioned-elegance-indoors-generated-by-ai_188544-37881.jpg?t=st=1708694272~exp=1708697872~hmac=da9ee2752cba9d8ec7b8aabc872215ae5bbcfaf9bcb0b6557ed20f8dbc734b58&w=740");
+background-repeat:no-repeat;
+background-size:cover;
+}
+
+body, ul {
+  margin: 0;
+  padding: 0;
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+header {
+  background-color:rgb(104, 1, 1);
+  border-radius:5px;
+  margin:3%;
+  margin-top:3em;  
+
+}
+.logo{
+  color: #ffffff;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+ul {
+  list-style: none;
+  display: flex;
+}
+
+li {
+  margin-left: 100px;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+  font-size: 120%;
+}
+
+a:hover {
+  color:#dc9d20;
+}
+.home{
+  color:wheat;
+  text-align: center;
+  font-size: 110px;
+  margin-top: 10%;
+  
+}
+.quote{
+  text-align: center;
+  color: #ffb710;
+  font-size: 25px;
+
+}
+
+/* admin page */
+
+h4{
+  color: #ff0000;
+  display: inline;
+}
+.header{
+  position: relative;
+  top: 10%;
+  color: #ffffff;
+  text-align: center;
+}
+.login-box {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  width: 500px;
+  padding: 40px 70px;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.431);
+  box-sizing: border-box;
+  box-shadow: 0 20px 25px rgba(0,0,0),
+  0 15px 25px rgba(0,0,0),
+  0 15px 25px rgba(0,0,0);
+  border-radius: 10px;
+  display:block;
+}
+
+#userr-box {
+  position: absolute;
+  top: 58%;
+  left: 50%;
+  width: 500px;
+  padding: 10px 70px 20px;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.431);
+  box-sizing: border-box;
+  box-shadow: 0 20px 25px rgba(0,0,0),
+  0 15px 25px rgba(0,0,0),
+  0 15px 25px rgba(0,0,0);
+  border-radius: 10px;
+  display:block;
+}
+
+.login-box .user-box {
+  position: relative;
+}
+
+.login-box .user-box input {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #ffffff;
+  margin-bottom: 30px;
+  border: none;
+  border-bottom: 1px solid #fff;
+  outline: none;
+  background: transparent;
+}
+
+.login-box .user-box label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fff;
+  pointer-events: none;
+  transition: .5s;
+}
+
+.login-box .user-box input:focus ~ label,
+.login-box .user-box input:valid ~ label {
+  top: -20px;
+  left: 0;
+  color: #ff0000;
+  font-size: 20px;
+}
+
+.login-box form button {
+  position: relative;
+  display: inline-block;
+  padding: 7px 20px;
+  color: #000000;
+  font-size: 15px;
+  text-transform: uppercase;
+  transition: .5s;
+  margin-top: 30px;
+  border: none;
+  letter-spacing: 4px
+}
+
+.login-box button:hover {
+  background: #ff1111;
+  color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #ff1111,
+              0 0 25px #ff1111,
+              0 0 50px #ff1111,
+              0 0 100px #ff1111;
+}
+

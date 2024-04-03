@@ -1,0 +1,257 @@
+body{
+background-color:rgb(254, 254, 254);
+/* background-image:url("https://images.alphacoders.com/133/1339726.png"); */
+background-repeat:no-repeat;
+background-size:cover;
+font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+body, ul {
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color:#00888a;
+  width: 100%;
+  position: fixed;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+
+}
+.logo{
+  color: #ffffff;
+}
+
+ul {
+  list-style: none;
+  display: flex;
+}
+
+li {
+  margin-left: 70px;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+  font-size: 120%;
+}
+
+a:hover {
+  color:#000000;
+}
+
+.logout a{
+    font-weight: bold;
+    color:#000000;
+}
+.logout a:hover{
+    color: #ffffff;
+}
+
+
+/* book.htlm */
+.table-main{
+  background-color: #5bb4a9;
+  display: inline-block;
+  margin: 8% 10%;
+  
+}
+
+table,th,td{
+  border: 2px solid black;
+  border-collapse:separate;
+  text-align: center;
+  padding: 10px 10px;
+}
+
+th{
+  font-size: large;
+  font-weight: bold;
+  background-color:#00b29d;
+  position: sticky;
+  top: 9.6%;
+}
+tr:nth-child(even){
+  background-color: #cbd9d7;
+}
+tr{
+text-transform: uppercase;
+font-weight: bold;
+}
+
+/* userdetails.html */
+
+.table-user{
+  background-color: #6bb7b8;
+  display: inline-block;
+  margin: 8% 3%;
+}
+
+.usertable table,.usertable td,.usertable th{
+  border: 2px solid black;
+  text-align: center;
+  padding: 10px 40px;
+}
+
+.usertable th{
+  font-size: large;
+  font-weight: bold;
+  background-color: #00888a;
+  position: sticky;
+  top: 9.6%;
+}
+
+.usertable tr:nth-child(even){
+  background-color: #bbd8d8;
+
+}
+.delete-btn{
+  background-color:#ae2012;
+  padding: 5% 20%;
+  border-radius: 4px;
+  font-size: 17px;
+
+  
+}
+/* editbook.html */
+
+.editpage{
+  position:static;
+  background-color: #71135e;
+}
+
+.header{
+  position: relative;
+  top: 10%;
+  color: #ff1111;
+  text-align: center;
+}
+.login-box {
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  width: 500px;
+  padding: 40px 70px;
+  transform: translate(-50%, -50%);
+  background:#d56cb5;
+  box-shadow: 10px 10px 25px rgb(42, 38, 38);
+  border-radius: 10px;
+  display:block;
+}
+
+
+.login-box .user-box {
+  position: relative;
+}
+
+.login-box .user-box input {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #ffffff;
+  margin-bottom: 30px;
+  border: none;
+  border-bottom: 1px solid #fff;
+  outline: none;
+  background: transparent;
+}
+
+.login-box .user-box label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fff;
+  pointer-events: none;
+  transition: .5s;
+}
+
+.login-box .user-box input:focus ~ label,
+.login-box .user-box input:valid ~ label {
+  top: -20px;
+  left: 0;
+  color: #e8e6e7;
+  font-size: 20px;
+}
+
+.login-box form button {
+  position: relative;
+  display: inline-block;
+  padding: 7px 20px;
+  color: #000000;
+  font-size: 15px;
+  text-transform: uppercase;
+  transition: .5s;
+  margin-top: 30px;
+  border: none;
+  letter-spacing: 4px;
+  border-radius: 3px;
+}
+
+.login-box #delete:hover {
+  background: #ff1111;
+  color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #ff1111,
+              0 0 25px #ff1111,
+              0 0 50px #ff1111,
+              0 0 100px #ff1111;
+}
+
+.login-box #update:hover {
+  background: #001eff;
+  color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #001eff,
+              0 0 25px #001eff,
+              0 0 50px #001eff,
+              0 0 100px #001eff;
+}
+
+
+/* member.html */
+
+
+.table-member{
+  background-color:#68d1a4;;
+  display: inline-block;
+  margin: 8% 7%;
+}
+
+.member table,.member td,.member th{
+  border: 2px solid black;
+  text-align: center;
+  padding: 10px 20px;
+}
+
+
+.member th{
+  font-size: large;
+  font-weight: bold;
+  background-color:#037443;
+  position: sticky;
+  top: 9.6%;
+}
+.member tr:nth-child(even){
+  background-color: #9de5c6;
+}
+.member tr{
+text-transform: uppercase;
+font-weight: bold;
+}
+
+.member-h{
+  background-color:#037443;
+}
+.td{
+  width: 100px;
+}
